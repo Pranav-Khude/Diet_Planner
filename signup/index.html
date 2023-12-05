@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diet Planner login</title>
+
+    <link rel="stylesheet" href="signup_page.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Italiana"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="backarrow" id="backarrow">
+      <svg
+        fill="#000000"
+        height="50px"
+        width="50px"
+        version="1.1"
+        id="Capa_1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 0 219.151 219.151"
+        xml:space="preserve"
+      >
+        <g>
+          <path
+            d="M109.576,219.151c60.419,0,109.573-49.156,109.573-109.576C219.149,49.156,169.995,0,109.576,0S0.002,49.156,0.002,109.575
+          C0.002,169.995,49.157,219.151,109.576,219.151z M109.576,15c52.148,0,94.573,42.426,94.574,94.575
+          c0,52.149-42.425,94.575-94.574,94.576c-52.148-0.001-94.573-42.427-94.573-94.577C15.003,57.427,57.428,15,109.576,15z"
+          />
+          <path
+            d="M94.861,156.507c2.929,2.928,7.678,2.927,10.606,0c2.93-2.93,2.93-7.678-0.001-10.608l-28.82-28.819l83.457-0.008
+          c4.142-0.001,7.499-3.358,7.499-7.502c-0.001-4.142-3.358-7.498-7.5-7.498l-83.46,0.008l28.827-28.825
+          c2.929-2.929,2.929-7.679,0-10.607c-1.465-1.464-3.384-2.197-5.304-2.197c-1.919,0-3.838,0.733-5.303,2.196l-41.629,41.628
+          c-1.407,1.406-2.197,3.313-2.197,5.303c0.001,1.99,0.791,3.896,2.198,5.305L94.861,156.507z"
+          />
+        </g>
+      </svg>
+    </div>
+    <form>
+      <div class="loginpage">
+        <div class="login-image">
+          <img class="login_thumbnail" src="loginImage.webp" />
+        </div>
+        <div class="login-content">
+          <h1 class="signup-txt">Sign Up</h1>
+          <div class="login-email">
+            <div class="input-icon">
+              <h3 class="headings">Username:- <br /></h3>
+              <input class="email" type="email" placeholder="abcd@gmail.com" />
+              <i class="fas fa-check-circle check-circle-icon"></i>
+            </div>
+            <div class="input-icon">
+              <h3 class="headings">Password:- <br /></h3>
+              <input
+                class="email-password"
+                type="password"
+                placeholder="*****"
+                autocomplete="off"
+              />
+              <i class="fas fa-eye-slash close-eye-icon"></i>
+            </div>
+            <div class="input-icon">
+              <h3 class="headings">Confirm password:- <br /></h3>
+              <input
+                class="email-password"
+                type="password"
+                placeholder="*****"
+                autocomplete="off"
+              />
+              <i class="fas fa-eye-slash close-eye-icon"></i>
+            </div>
+            <button class="signup-button" type="submit">Sign up</button>
+          </div>
+        </div>
+      </div>
+    </form>
+    <script>
+      const backarrow = document.querySelector("#backarrow");
+      backarrow.addEventListener("click", () => {
+        window.history.back();
+      });
+    </script>
+  </body>
+</html>
