@@ -24,7 +24,7 @@ async function performLogin() {
 
     if (response.ok) {
       const token = await response.json(); // Adjust this based on actual response format
-      setCookie("token", token, 1);
+      setCookie("login", token, 1);
       alert("Login successful!");
     } else {
       const errorText = await response.text();

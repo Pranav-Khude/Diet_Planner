@@ -14,19 +14,23 @@
         background-color: #655250;
         color: #fff;
         text-align: center;
-        padding: 20px;
+        padding: 10px 40px 10px 40px;
         border-bottom-left-radius: 50px;
         text-align: left;
+        display: flex;
+        justify-content: space-between;
       }
 
       nav ul {
         list-style-type: none;
         padding: 0;
+        display: flex;
+        margin-right: 40px;
+        align-items: center;
       }
 
       nav li {
-        display: inline;
-        margin-right: 20px;
+        display: flex;
       }
 
       nav a {
@@ -34,6 +38,12 @@
         color: #fff;
         font-weight: bold;
         padding-left: 25px;
+      }
+
+      li img {
+        width: 50px;
+        max-height: 50px;
+        border-radius: 50%;
       }
 
       .main {
@@ -74,7 +84,8 @@
         width: 100%;
       }
 
-      .main_right {
+      li {
+        align-items: center;
       }
 
       .circular-image {
@@ -99,6 +110,60 @@
       h2 {
         color: #333;
       }
+
+      #username {
+        cursor: pointer;
+      }
+
+      #username li {
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      #username img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin-right: 10px;
+        background: white;
+      }
+
+      .edtbutton {
+        text-align: center;
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+        padding: 15px;
+        background-color: #655250;
+        border-radius: 5px;
+        display: block;
+        transition: all 0.3s ease;
+        transform: translateY(0px);
+        opacity: 1;
+      }
+
+      .edtbutton:hover {
+        background-color: #443536;
+      }
+
+      .inactive {
+        transform: translateY(-10px);
+        opacity: 0;
+        max-height: 100vh;
+      }
+
+      .invisible {
+        display: none;
+      }
+
+      #listview {
+        margin-top: 150px;
+        background-color: #655250;
+        display: list-item;
+        position: absolute;
+        border-radius: 10px;
+      }
     </style>
   </head>
 
@@ -106,10 +171,19 @@
     <nav>
       <ul>
         <li><a href="/">Home</a></li>
-        <li><a href="/AboutUs">AboutUs</a></li>
-        <li><a href="/Login/">Login</a></li>
         <li><a href="/blogs">Blogs</a></li>
+        <li><a href="/AboutUs">AboutUs</a></li>
+      </ul>
+      <ul class="invisible" id="login">
+        <li><a href="/Login/">Login</a></li>
         <li><a href="/signup">SignUp</a></li>
+      </ul>
+      <ul style="display: block">
+        <li id="username">
+          <img src="https://i.gifer.com/XOsX.gif" alt="" /><a class="edtbutton"
+            >Kedar</a
+          >
+        </li>
       </ul>
     </nav>
     <div class="main">
@@ -128,5 +202,30 @@
         <img class="circular-image" src="food.png" alt="" />
       </div>
     </div>
+    <script>
+      var usernameDropdown = document.querySelector("#username");
+      usernameDropdown.addEventListener("click", () => {
+        let li = document.querySelector("#listview");
+        li.classList.toggle("inactive");
+      });
+
+      document.querySelector(".main").addEventListener("click", () => {
+        let li = document.querySelector("#listview");
+        li.classList.add("inactive");
+      });
+      document.addEventListener("DOMContentLoaded", function () {
+        let logoutButton = document.createElement("li");
+        logoutButton.id = "listview";
+        logoutButton.classList.add("inactive");
+        logoutButton.innerHTML =
+          '<a class="edtbutton" id="edit_profile">Edit Profile</a><a class="edtbutton" id="logout">Logout</a>';
+        usernameDropdown.appendChild(logoutButton);
+        document.querySelector("#logout").addEventListener("click", () => {
+          console.log("hi");
+          document.cookie =
+            "login" + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        });
+      });
+    </script>
   </body>
 </html>
