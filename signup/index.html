@@ -41,7 +41,7 @@
           C0.002,169.995,49.157,219.151,109.576,219.151z M109.576,15c52.148,0,94.573,42.426,94.574,94.575
           c0,52.149-42.425,94.575-94.574,94.576c-52.148-0.001-94.573-42.427-94.573-94.577C15.003,57.427,57.428,15,109.576,15z"
           />
-          <path
+          <path 
             d="M94.861,156.507c2.929,2.928,7.678,2.927,10.606,0c2.93-2.93,2.93-7.678-0.001-10.608l-28.82-28.819l83.457-0.008
           c4.142-0.001,7.499-3.358,7.499-7.502c-0.001-4.142-3.358-7.498-7.5-7.498l-83.46,0.008l28.827-28.825
           c2.929-2.929,2.929-7.679,0-10.607c-1.465-1.464-3.384-2.197-5.304-2.197c-1.919,0-3.838,0.733-5.303,2.196l-41.629,41.628
@@ -50,7 +50,8 @@
         </g>
       </svg>
     </div>
-    <form>
+    <div>
+      <form>
       <div class="loginpage">
         <div class="login-image">
           <img class="login_thumbnail" src="loginImage.webp" />
@@ -58,8 +59,9 @@
         <div class="login-content">
           <h1 class="signup-txt">Sign Up</h1>
           <div class="login-email">
+            <!-- Existing fields -->
             <div class="input-icon">
-              <h3 class="headings">Username:- <br /></h3>
+              <h3 class="headings">Email:- <br /></h3>
               <input class="email" type="email" placeholder="abcd@gmail.com" />
               <i class="fas fa-check-circle check-circle-icon"></i>
             </div>
@@ -70,7 +72,7 @@
                 type="password"
                 placeholder="*****"
                 autocomplete="off"
-              />
+              />  
               <i class="fas fa-eye-slash close-eye-icon"></i>
             </div>
             <div class="input-icon">
@@ -83,11 +85,64 @@
               />
               <i class="fas fa-eye-slash close-eye-icon"></i>
             </div>
+            <!-- Additional fields -->
+            <div class="input-icon">
+              <h3 class="headings">Name:- <br /></h3>
+              <input class="name" type="text" placeholder="Your Name" />
+            </div>
+            <div class="input-icon">
+              <h3 class="headings">Height:- <br /></h3>
+              <input class="height" type="text" placeholder="Your Height" />
+            </div>
+            <div class="input-icon">
+              <h3 class="headings">Weight:- <br /></h3>
+              <input class="weight" type="text" placeholder="Your Weight" />
+            </div>
+            <div class="input-icon">
+              <h3 class="headings">Age:- <br /></h3>
+              <input class="age" type="text" placeholder="Your Age" />
+            </div>
+            <div class="input-icon">
+              <h3 class="headings">Gender:- <br /></h3>
+              <select class="select-field" id="gender">
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+              </select>
+          </div>
+          
+          <div class="input-icon">
+              <h3 class="headings">Food Preference:- <br /></h3>
+              <select class="select-field" id="food-preference">
+                  <option value="veg">Veg</option>
+                  <option value="non-veg">Non-Veg</option>
+                  <option value="eggetarian">Eggetarian</option>
+              </select>
+          </div>
+          
+          <div class="input-icon">
+              <h3 class="headings">Activity:- <br /></h3>
+              <select class="select-field" id="activity">
+                  <option value="sedentary">Sedentary</option>
+                  <option value="active">Active</option>
+              </select>
+          </div>
+          
+          <div class="input-icon">
+              <h3 class="headings">Weight Goal:- <br /></h3>
+              <select class="select-field" id="weight-goal">
+                  <option value="cut">Cut</option>
+                  <option value="bulk">Bulk</option>
+                  <option value="stay-fit">Stay Fit</option>
+                  <option value="pregnancy-reg">Pregnancy Reg</option>
+              </select>
+          </div>
             <button class="signup-button" type="submit">Sign up</button>
           </div>
         </div>
       </div>
     </form>
+    </div>
+    
     <script>
       const backarrow = document.querySelector("#backarrow");
       backarrow.addEventListener("click", () => {
