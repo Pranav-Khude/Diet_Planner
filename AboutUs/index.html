@@ -6,43 +6,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Diet Planner</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
-      margin: 0;
-      padding: 0;
-    }
-
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+      }
     nav {
-      background-color: #655250;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-      border-bottom-left-radius: 50px;
-      text-align: left;
-    }
+        background-color: #655250;
+        color: #fff;
+        text-align: center;
+        padding: 10px 40px 10px 40px;
+        border-bottom-left-radius: 50px;
+        text-align: left;
+        display: flex;
+        justify-content: space-between;
+      }
 
-    nav ul {
-      list-style-type: none;
-      padding: 0;
-    }
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        margin-right: 40px;
+        align-items: center;
+      }
 
-    nav li {
-      display: inline;
-      margin-right: 20px;
-    }
+      nav li {
+        display: flex;
+      }
 
-    nav a {
-      text-decoration: none;
-      color: #fff;
-      font-weight: bold;
-      padding-left: 25px;
-      transition: color 0.3s ease-in-out;
-    }
-
-    nav a:hover {
-      color: #ffd700; /* Change to your preferred hover color */
-    }
+     nav a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+        padding-left: 25px;
+      }
+      li img {
+        width: 50px;
+        max-height: 50px;
+        border-radius: 50%;
+      }
 
     .main {
       display: flex;
@@ -104,6 +107,9 @@
       height: auto;
       border-radius: 50%;
     }
+    li {
+        align-items: center;
+      }
 
     .sections{
       padding: 20px;
@@ -148,19 +154,81 @@
     .main_left img, .main_right img{
       transition: 300ms;
     }
+    #username {
+        cursor: pointer;
+      }
+
+      #username li {
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      #username img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin-right: 10px;
+        background: white;
+      }
+
+      .edtbutton {
+        text-align: center;
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+        padding: 15px;
+        background-color: #655250;
+        border-radius: 5px;
+        display: block;
+        transition: all 0.3s ease;
+        transform: translateY(0px);
+        opacity: 1;
+      }
+
+      .edtbutton:hover {
+        background-color: #443536;
+      }
+
+      .inactive {
+        transform: translateY(-10px);
+        opacity: 0;
+        max-height: 100vh;
+      }
+
+      .invisible {
+        display: none;
+      }
+
+
+      #listview {
+        margin-top: 150px;
+        background-color: #655250;
+        display: list-item;
+        position: absolute;
+        border-radius: 10px;
+      }
+
   </style>
 </head>
 <body>
   <nav>
     <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/AboutUs/">About Us</a></li>
-      <li><a href="/Login/">Login</a></li>
-      <li><a href="/blogs">Blogs</a></li>
-      <li><a href="/signup/">Sign Up</a></li>
+      <li><a href="/" >Home</a></li>
+      <li><a href="/blogs"  >Blogs</a></li>
+      <li><a href="/AboutUs">AboutUs</a></li>
+    </ul>
+    <ul class="invisible" id="login">
+      <li><a href="/Login/" >Login</a></li>
+      <li><a href="/signup" >SignUp</a></li>
+    </ul>
+    <ul style="display: block">
+      <li id="username">
+        <img src="https://i.gifer.com/XOsX.gif" alt="" /><a class="edtbutton"
+          >Kedar</a>
+      </li>
     </ul>
   </nav>
-
   <div class="main">
     <div class="main_left">
       <section class="sections">
@@ -203,7 +271,31 @@
       <img src="gmail-icon.png" alt="Gmail" />
     </a>
   </div>
+  <script>
+    var usernameDropdown = document.querySelector("#username");
+    usernameDropdown.addEventListener("click", () => {
+      let li = document.querySelector("#listview");
+      li.classList.toggle("inactive");
+    });
 
+    document.querySelector(".main").addEventListener("click", () => {
+      let li = document.querySelector("#listview");
+      li.classList.add("inactive");
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+      let logoutButton = document.createElement("li");
+      logoutButton.id = "listview";
+      logoutButton.classList.add("inactive");
+      logoutButton.innerHTML =
+        '<a class="edtbutton" id="edit_profile">Edit Profile</a><a class="edtbutton" id="logout">Logout</a>';
+      usernameDropdown.appendChild(logoutButton);
+      document.querySelector("#logout").addEventListener("click", () => {
+        console.log("hi");
+        document.cookie =
+          "login" + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      });
+    });
+  </script>
 </body>
 
 
