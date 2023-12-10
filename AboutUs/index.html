@@ -1,160 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Diet Planner</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f0f0f0;
-        margin: 0;
-        padding: 0;
-      }
 
-      nav {
-        background-color: #655250;
-        color: #fff;
-        text-align: center;
-        padding: 20px;
-        border-bottom-left-radius: 50px;
-        text-align: left;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diet Planner</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
 
-      nav ul {
-        list-style-type: none;
-        padding: 0;
-      }
+    nav {
+      background-color: #655250;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      border-bottom-left-radius: 50px;
+      text-align: left;
+    }
 
-      nav li {
-        display: inline;
-        margin-right: 20px;
-      }
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+    }
 
-      nav a {
-        text-decoration: none;
-        color: #fff;
-        font-weight: bold;
-        padding-left: 25px;
-      }
+    nav li {
+      display: inline;
+      margin-right: 20px;
+    }
 
-      .main {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        padding: 20px;
-        margin-top: 50px;
-      }
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      padding-left: 25px;
+      transition: color 0.3s ease-in-out;
+    }
 
-      .main_left {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 80%;
-        max-width: 400px;
-        /* Adjust as needed */
-      }
+    nav a:hover {
+      color: #ffd700; /* Change to your preferred hover color */
+    }
 
-      .main_left_up_down {
-        text-align: center;
-        /* Adjust as needed */
-        margin: 20px;
-      }
+    .main {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+    .main_left {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .main_left section,
+    .main_right section {
+      width: 80%;
+    }
 
-      .main_left_up_down h1 {
-        font-family: "Italiana", sans-serif;
-        font-size: 36px;
-        margin-bottom: 10px;
-      }
+    .main_left img,
+    .main_right img {
+      width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 5%;
+    max-height: 229px;
+    object-fit: cover;
+    }
+    /* .main_left_up_down {
+      text-align: center;
+      margin: 20px;
+    }
 
-      .main_left_up_down p {
-        font-family: "Darker Grotesque", sans-serif;
-        font-size: 16px;
-        text-align: justify;
-      }
+    .main_left_up_down h1 {
+      font-family: "Italiana", sans-serif;
+      font-size: 36px;
+      margin-bottom: 10px;
+      color: #333; 
+    }
 
-      .main_right {
-        /* Add styles for the right section if needed */
-      }
+    .main_left_up_down p {
+      font-family: "Darker Grotesque", sans-serif;
+      font-size: 16px;
+      text-align: justify;
+      line-height: 1.6;
+      color: #555; 
+    } */
 
-      .circular-image {
-        width: 100%;
-        /* Adjust as needed */
-        max-width: 400px;
-        /* Adjust as needed */
-        height: auto;
-        border-radius: 50%;
-      }
+    .main_right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .circular-image {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      border-radius: 50%;
+    }
 
-      section {
-        padding: 20px;
-        background-color: #fff;
-        margin: 20px;
-        border: 1px solid #ccc;
-      }
+    .sections{
+      padding: 20px;
+      /* background-color: #fff; */
+      margin: 20px;
+      /* border: 1px solid #ccc; */
+    }
 
-      .signup-icon img {
-        width: 40px;
-        height: 40px;
-        margin-left: 800px;
-      }
+    .signup-icon img {
+      width: 40px;
+      height: 40px;
+      margin-left: 800px; 
+    }
 
-      h2 {
-        color: #333;
-      }
+    .title {
+      font-size: 50px;
+      color: #333;
+  }
 
-      .social-icons {
-        text-align: center;
-        margin-bottom: 20px;
-      }
+    .social-icons {
+      text-align: center;
+      margin-bottom: 20px;
+    }
 
-      .social-icons img {
-        width: 40px;
-        height: 40px;
-        margin: 0 10px;
-      }
-    </style>
-  </head>
+    .social-icons a {
+      display: inline-block;
+      margin: 0 10px;
+      transition: transform 0.3s ease-in-out;
+    }
 
-  <body>
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/AboutUs/">About Us</a></li>
-        <li><a href="/Login/">Login</a></li>
-        <li><a href="/blogs">Blogs</a></li>
-        <li><a href="/signup/">Sign Up</a></li>
-      </ul>
-    </nav>
+    .social-icons a:hover {
+      transform: scale(1.2); /* Adjust the scaling factor as needed */
+    }
 
-    <div class="main">
-      <div class="main_left">
-        <div class="main_left_up_down">
-          <h1>Welcome to Diet Planner</h1>
-          <p>
-            Where health meets personalization. We empower individuals on their
-            wellness journey by providing a user-friendly platform to calculate
-            Body Mass Index (BMI) and receive personalized diet plans. Our
-            mission is to offer tailored nutritional guidance, helping users
-            achieve their fitness goals and lead a healthier lifestyle. Join us
-            in the pursuit of well-being, where science meets individuality for
-            a truly personalized approach to health.
-          </p>
-        </div>
-      </div>
+    .social-icons img {
+      width: 40px;
+      height: 40px;
+    }
+    .main_left img:hover, .main_right img:hover{
+      transform: scale(1.1);
+    }
+    .main_left img, .main_right img{
+      transition: 300ms;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/AboutUs/">About Us</a></li>
+      <li><a href="/Login/">Login</a></li>
+      <li><a href="/blogs">Blogs</a></li>
+      <li><a href="/signup/">Sign Up</a></li>
+    </ul>
+  </nav>
 
-      <div class="main_right">
-        <!-- Your existing content for the right section -->
-        <!-- ... -->
-      </div>
+  <div class="main">
+    <div class="main_left">
+      <section class="sections">
+        <h1 class="title">Welcome to Diet Planner</h1>
+        <p>
+          Where health meets personalization. We empower individuals on their wellness journey by providing a
+          user-friendly platform to calculate Body Mass Index (BMI) and receive personalized diet plans. Our mission
+          is to offer tailored nutritional guidance, helping users achieve their fitness goals and lead a healthier
+          lifestyle. Join us in the pursuit of well-being, where science meets individuality for a truly personalized
+          approach to health.
+        </p>
+      </section>
+      <img src="WelcomeDietPlanner.jpeg" alt="Placeholder Image Left" />
     </div>
 
-    <div class="social-icons">
+    <div class="main_right">
+      <img src="Our mission.jpeg" alt="Placeholder Image Right" />
+      <section class="sections">
+        <h1 class="title">Our Mission</h1>
+        <p>
+          At Diet Planner, our mission is to revolutionize the way individuals approach their health and wellness. We
+          believe in the power of personalized nutrition to transform lives. Our goal is to provide a user-friendly
+          platform that not only calculates Body Mass Index (BMI) but goes beyond, delivering tailored diet plans based
+          on individual needs and goals.
+        </p>
+        <p>
+          We are committed to guiding our users on a journey towards a healthier lifestyle. By combining scientific
+          principles with a personalized touch, we aim to empower individuals to make informed choices about their
+          nutrition, achieve their fitness aspirations, and ultimately lead fulfilling and healthy lives.
+        </p>
+      </section>
+    </div>
+  </div>
+
+  <div class="social-icons">
+    <a href="https://www.instagram.com/your_instagram" target="_blank">
       <img src="instagram-icon.png" alt="Instagram" />
+    </a>
+    <a href="mailto:your.email@example.com">
       <img src="gmail-icon.png" alt="Gmail" />
-    </div>
+    </a>
+  </div>
 
-    <!-- The rest of your HTML content here -->
-    <!-- ... -->
-  </body>
+</body>
+
+
 </html>
